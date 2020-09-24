@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import Calendar from "./useState/Calendar";
+import Clock from "./useState/Clock";
+import NotificationBar from "./useEffect/NotificationBar";
+import Card from "./useContext/Card";
+
+import ThemesContextProvider from "./useContext/theme-context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemesContextProvider>
+      <div className="App">
+        <div>
+          <div>Calendar Component</div>
+          <Calendar />
+        </div>
+        <br />
+        <div>
+          <div>Clock Component</div>
+          <Clock />
+        </div>
+        <br />
+        <div>
+          <div>NotificationBar Component</div>
+          <NotificationBar />
+        </div>
+        <div>
+          <div>Card</div>
+          <Card />
+        </div>
+      </div>
+    </ThemesContextProvider>
   );
 }
 
